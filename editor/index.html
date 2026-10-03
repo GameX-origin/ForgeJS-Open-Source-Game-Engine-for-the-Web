@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeJS Editor</title>
+    <link rel="stylesheet" href="./editor.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <header id="toolbar">
+        <div class="logo">ForgeJS</div>
+
+        <button>File</button>
+        <button>Edit</button>
+        <button>Scene</button>
+        <button>Game</button>
+        <button>Assets</button>
+        <button>Window</button>
+
+        <div class="toolbar-spacer"></div>
+
+        <button id="playButton">▶ Play</button>
+        <button>■ Stop</button>
+    </header>
+
+    <main id="editor">
+
+        <aside id="hierarchy">
+            <div class="panel-title">HIERARCHY</div>
+
+            <div class="tree-item">
+                📦 Scene
+            </div>
+
+            <div class="tree-item child">
+                ◉ Camera
+            </div>
+
+            <div class="tree-item child">
+                ◉ Player
+            </div>
+
+        </aside>
+
+        <section id="viewport">
+
+            <div class="viewport-toolbar">
+                <button>2D</button>
+                <button>3D</button>
+                <button>Move</button>
+                <button>Rotate</button>
+                <button>Scale</button>
+            </div>
+
+            <div id="sceneView">
+                <div class="scene-grid"></div>
+
+                <div id="demoObject">
+                    Player
+                </div>
+            </div>
+
+        </section>
+
+        <aside id="inspector">
+
+            <div class="panel-title">INSPECTOR</div>
+
+            <h3>Player</h3>
+
+            <div class="component">
+                <strong>Transform</strong>
+
+                <label>Position X</label>
+                <input value="0">
+
+                <label>Position Y</label>
+                <input value="0">
+
+                <label>Position Z</label>
+                <input value="0">
+            </div>
+
+            <div class="component">
+                <strong>Components</strong>
+
+                <button>+ Add Component</button>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <section id="visualScript">
+
+        <div class="panel-title">
+            VISUAL SCRIPT
+        </div>
+
+        <div id="nodeCanvas">
+
+            <div class="node event-node">
+                <div class="node-header">Event</div>
+                <div class="node-body">
+                    Begin Play
+                    <span class="pin exec"></span>
+                </div>
+            </div>
+
+            <div class="node action-node">
+                <div class="node-header">Transform</div>
+                <div class="node-body">
+                    Set Position
+                    <span class="pin exec"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="assets">
+
+        <div class="panel-title">
+            ASSETS
+        </div>
+
+        <div class="asset">
+            📁 Scenes
+        </div>
+
+        <div class="asset">
+            📁 Materials
+        </div>
+
+        <div class="asset">
+            📁 Scripts
+        </div>
+
+    </section>
+
+</div>
+
+<script src="./editor.js"></script>
+
+</body>
+</html>
